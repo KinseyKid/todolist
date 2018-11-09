@@ -2,7 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TodoListItemTest {
-    private final TodoListItem item = new TodoListItem("Walk the dog", 3);
+    private final TodoListItem item = new TodoListItem("Walk the dog", 3, "Stephen");
     
     @Test
     public void testDescription() {
@@ -19,5 +19,10 @@ public class TodoListItemTest {
         assertFalse(item.isDone());
         item.markDone();
         assertTrue(item.isDone());
+    }
+    
+    @Test
+    public void testGetUsername() {
+    	assertEquals("Stephen", item.getUsername());
     }
 }

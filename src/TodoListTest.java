@@ -88,4 +88,17 @@ public class TodoListTest {
             todoList.search("Buy")
         );
     }
+    
+    @Test
+    public void testSearchByName() {
+    	todoList.addItem("Buy bread", 5, "John");
+    	todoList.addItem("Buy a car", 7, "Tim");
+    	todoList.addItem("Sleep", 10,"John");
+    	todoList.addItem("Attend Lecture",10,"John");
+    	todoList.addItem("Eat Biscuit", 2, "Tim");
+        assertEquals(
+                Arrays.asList("Buy bread", "Sleep", "Attend Lecture"),
+                todoList.searchByName("John")
+            );
+    }
 }
